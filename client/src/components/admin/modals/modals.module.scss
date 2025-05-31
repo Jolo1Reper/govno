@@ -1,0 +1,103 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.listItem {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.listBtn {
+  padding: 5px 0;
+  width: 100%;
+}
+
+.inputsBlock {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.closeBtn {
+  margin-left: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.infoBlock {
+  margin-top: 10px;
+}
+
+.infoBlockItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 5px;
+
+  .input {
+    margin-bottom: 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  button {
+    width: 50%;
+  }
+}
+
+.variantWrapper {
+  margin-left: 10px;
+  width: 100%;
+
+  input {
+    width: 100%;
+  }
+}
+
+.infoWidthVarBlock {
+  align-items: center;
+}
+
+.infoWithVarItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.variants {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}

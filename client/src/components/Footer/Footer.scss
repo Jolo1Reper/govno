@@ -1,0 +1,30 @@
+.footer {
+    background-color: #f8f9fa;
+    color: #333;
+    
+    h5 {
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        color: #1a1a1a;
+    }
+
+    ul {
+        li {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #007bff;
+            }
+        }
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .border-top {
+        border-color: #dee2e6 !important;
+    }
+} 

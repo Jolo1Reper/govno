@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: #2f2f2f;
+
+  &:hover {
+    background-color: #2f2f2f;
+  }
+}

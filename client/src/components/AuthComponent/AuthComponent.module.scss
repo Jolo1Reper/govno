@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formItem {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border-color: var(--active);
+  }
+}
+
+.formBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formLink {
+  margin-left: 5px;
+  color: var(--active);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.formButton {
+  align-self: flex-end;
+}
+
+.adminCheck {
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+

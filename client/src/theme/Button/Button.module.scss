@@ -1,0 +1,149 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  background: transparent;
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition), border var(--transition);
+  cursor: pointer;
+}
+
+.outline {
+  border: 1px solid #ccc;
+  color: #000;
+
+  &:hover {
+    background-color: #ccc;
+  }
+
+  &.unHovered,
+  &.loading,
+  &.disabled {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.primary {
+  color: var(--primary-color);
+  background-color: var(--primary);
+
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+
+  &.unHovered,
+  &.loading,
+  &.disabled {
+    &:hover {
+      background-color: var(--primary);
+    }
+  }
+}
+
+.secondary {
+  color: var(--secondary-color);
+  background-color: var(--secondary);
+
+  &:hover {
+    background-color: var(--secondary-hover);
+  }
+
+  &.unHovered,
+  &.loading,
+  &.disabled {
+    &:hover {
+      background-color: var(--secondary);
+    }
+  }
+}
+
+.danger {
+  color: var(--danger-color);
+  background-color: var(--danger);
+
+  &:hover {
+    background-color: var(--danger-hover);
+  }
+
+  &.unHovered,
+  &.loading,
+  &.disabled {
+    &:hover {
+      background-color: var(--danger);
+    }
+  }
+}
+
+.success {
+  color: var(--success-color);
+  background-color: var(--success);
+
+  &:hover {
+    background-color: var(--success-hover);
+  }
+
+  &.unHovered,
+  &.loading,
+  &.disabled {
+    &:hover {
+      background-color: var(--success);
+    }
+  }
+}
+
+.active {
+  color: var(--active-color);
+  background-color: var(--active);
+
+  &:hover {
+    background-color: var(--active-hover);
+  }
+
+  &.unHovered,
+  &.loading,
+  &.disabled {
+    &:hover {
+      background-color: var(--active);
+    }
+  }
+}
+
+.loading {
+  position: relative;
+  color: transparent !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #000;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: button-loading-spinner 1s ease infinite;
+    inset: 0;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -1,0 +1,162 @@
+.container {
+  margin-top: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  max-width: 300px;
+}
+
+.topImg {
+  margin: 0 auto;
+  width: 300px;
+  object-fit: contain;
+}
+
+.topRatingBlock {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.editBtn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.rating {
+  margin-bottom: 10px;
+  font-size: 18px;
+
+  span {
+    font-weight: 700;
+    color: var(--active);
+  }
+}
+
+.rate {
+  margin-bottom: 10px;
+  text-align: center;
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+.price {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 26px;
+}
+
+.desc {
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.cartBtn {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  background-color: transparent;
+  transition: background-color var(--transition), color var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+.addToBasketBtn {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.selector {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.chars {
+  margin-top: 20px;
+}
+
+.charsTitle {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.infoItem {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.infoTitle {
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.infoDesc {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.infoVariant {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+
+    &::after {
+      content: '/';
+      position: absolute;
+      right: -8px;
+      font-weight: 700;
+    }
+  }
+}
+
+.infoColorWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.infoColor {
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 5px;
+  width: 18px;
+  height: 18px;
+}

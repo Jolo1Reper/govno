@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+}
+
+.active {
+  color: #fff;
+  background-color: #2f2f2f;
+
+  &:hover {
+    background-color: #2f2f2f;
+  }
+}

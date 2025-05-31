@@ -1,0 +1,68 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.input,
+.textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border-color: var(--active);
+  }
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.characteristics {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.characteristicsTitle {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+.addCharBtn {
+  margin-bottom: 15px;
+}
+
+.charItem {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) 70px;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .input {
+    min-width: 0;
+  }
+}
+
+.removeCharBtn {
+  height: 100%;
+  padding: 4px;
+  min-width: 70px;
+  font-size: 12px;
+}
+
+.submitBtn {
+  align-self: flex-end;
+  min-width: 120px;
+} 

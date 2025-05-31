@@ -1,0 +1,29 @@
+:root {
+  /* Main */
+  --transition: 0.2s ease-in-out;
+
+  /* Primary  */
+  --primary-color: #fff;
+  --primary: #007bff;
+  --primary-hover: #0069d9;
+
+  /* Secondary  */
+  --secondary-color: #fff;
+  --secondary: #6c757d;
+  --secondary-hover: #5a6268;
+
+  /* Danger  */
+  --danger-color: #fff;
+  --danger: #e31628;
+  --danger-hover: #bd2130;
+
+  /* Success  */
+  --success-color: #fff;
+  --success: #28a745;
+  --success-hover: #1e7e34;
+
+  /* Active */
+  --active-color: #fff;
+  --active: #2f2f2fff;
+  --active-hover: #4b3b3b;
+}
