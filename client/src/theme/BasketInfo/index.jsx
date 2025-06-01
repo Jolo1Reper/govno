@@ -28,13 +28,13 @@ const BasketBottom = ({ totalPrice, totalCount, totalPositions, isLoading }) => 
         )}
       </ul>
 
-      <Button
+      {/* <Button
         disabled={isLoading}
         variant="success"
         className={styles.btn}
         onClick={() => setOpened(true)}>
         Создать заказ
-      </Button>
+      </Button> */}
 
       <AlertModal opened={opened} onClose={() => setOpened(false)} title="Что то пошло не так...">
         <p className={styles.modalDesc}>

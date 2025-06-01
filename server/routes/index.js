@@ -7,6 +7,7 @@ const typeRouter = require('./typeRouter');
 const basketRouter = require('./basketRouter');
 const ratingRouter = require('./ratingRouter');
 const commentRouter = require('./commentRouter');
+const orderRouter = require('./orderRouter');
 
 // Log middleware for all routes
 router.use((req, res, next) => {
@@ -22,5 +23,6 @@ router.use('/device', deviceRouter);
 router.use('/basket', basketRouter);
 router.use('/rating', ratingRouter);
 router.use('/comment', commentRouter);
+router.use('/order', orderRouter);
 
 module.exports = router;

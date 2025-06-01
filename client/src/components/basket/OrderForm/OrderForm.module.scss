@@ -1,0 +1,44 @@
+.form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.title {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--active);
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bold;
+} 

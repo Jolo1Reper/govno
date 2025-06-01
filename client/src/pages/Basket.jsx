@@ -5,6 +5,7 @@ import BasketDevicesList from '../components/basket/BasketDevicesList';
 import { fetchBasketDevices } from '../http/basketApi';
 import BasketBottom from '../theme/BasketInfo';
 import NoItems from '../theme/NoItems';
+import OrderForm from '../components/basket/OrderForm';
 
 const Basket = observer(() => {
   const { basket, user } = useContext(Context);
@@ -25,6 +26,10 @@ const Basket = observer(() => {
     }
   }, []);
 
+  const handleOrderComplete = () => {
+    basket.clearBasket();
+  };
+
   if (!basket.basketTotalPositions && !isLoading) {
     return (
       <div className="container">
@@ -38,7 +43,11 @@ const Basket = observer(() => {
 
   return (
     <div className="container">
+      <h1>Корзина</h1>
       <BasketDevicesList isLoading={isLoading} />
+      {basket.basketDevices.length > 0 && (
+        <OrderForm onOrderComplete={handleOrderComplete} />
+      )}
       <BasketBottom
         totalPrice={basket.basketTotalPrice}
         totalCount={basket.basketTotalCount}

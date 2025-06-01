@@ -69,6 +69,24 @@ const Comment = sequelize.define('comment', {
   createdAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
 });
 
+const Order = sequelize.define('order', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false },
+  phone: { type: DataTypes.STRING, allowNull: false },
+  address: { type: DataTypes.STRING, allowNull: false },
+  status: { type: DataTypes.STRING, defaultValue: 'PENDING' }, // PENDING, COMPLETED
+  totalPrice: { type: DataTypes.INTEGER, allowNull: false },
+  createdAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
+});
+
+const OrderDevice = sequelize.define('order_device', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  orderId: { type: DataTypes.INTEGER, allowNull: false },
+  deviceId: { type: DataTypes.INTEGER, allowNull: false },
+  count: { type: DataTypes.INTEGER, defaultValue: 1 },
+  price: { type: DataTypes.INTEGER, allowNull: false }
+});
+
 User.hasOne(Basket);
 Basket.belongsTo(User);
 
@@ -105,6 +123,15 @@ Comment.belongsTo(Device);
 Type.belongsToMany(Brand, { through: TypeBrand });
 Brand.belongsToMany(Type, { through: TypeBrand });
 
+User.hasMany(Order);
+Order.belongsTo(User);
+
+Order.hasMany(OrderDevice);
+OrderDevice.belongsTo(Order);
+
+Device.hasMany(OrderDevice);
+OrderDevice.belongsTo(Device);
+
 module.exports = {
   User,
   Basket,
@@ -117,4 +144,6 @@ module.exports = {
   DeviceInfo,
   DevicePhoto,
   Comment,
+  Order,
+  OrderDevice
 };
