@@ -5,18 +5,28 @@ class BrandController {
   async create(req, res, next) {
     try {
       const { name, typeIds } = req.body;
-      const brand = await Brand.create({ name });
-      
-      if (typeIds && typeIds.length) {
-        // Создаем связи бренда с типами устройств
-        await TypeBrand.bulkCreate(
-          typeIds.map(typeId => ({
-            brandId: brand.id,
-            typeId: typeId
-          }))
-        );
+      let brand = await Brand.findOne({ where: { name } });
+      if (!brand) {
+        brand = await Brand.create({ name });
       }
-      
+      if (typeIds && typeIds.length) {
+        // Получаем уже существующие связи
+        const existingLinks = await TypeBrand.findAll({
+          where: { brandId: brand.id },
+          attributes: ['typeId']
+        });
+        const existingTypeIds = existingLinks.map(link => link.typeId);
+        // Добавляем только новые связи
+        const newTypeIds = typeIds.filter(typeId => !existingTypeIds.includes(typeId));
+        if (newTypeIds.length) {
+          await TypeBrand.bulkCreate(
+            newTypeIds.map(typeId => ({
+              brandId: brand.id,
+              typeId: typeId
+            }))
+          );
+        }
+      }
       return res.json(brand);
     } catch (e) {
       next(ApiError.badRequest(e.message));

@@ -49,11 +49,20 @@ const DevicePage = observer(() => {
       });
   };
 
-  const handleDeviceUpdate = (updatedDevice) => {
-    setDevice(prev => ({
-      ...prev,
-      ...updatedDevice
-    }));
+  const handleDeviceUpdate = async () => {
+    try {
+      const deviceData = await fetchOneDevice(id);
+      if (deviceData) {
+        setDevice({
+          ...deviceData,
+          photos: deviceData.photos || [],
+          info: deviceData.info || [],
+          variants: deviceData.variants || [],
+        });
+      }
+    } catch (e) {
+      console.error('Ошибка при обновлении устройства:', e);
+    }
   };
 
   useEffect(() => {

@@ -44,7 +44,7 @@ export const fetchDevices = async ({
   typeId,
   brandId,
   page,
-  limit = 4,
+  limit = 6,
   search,
   sort = SORT.RATING,
   order = 'DESC',

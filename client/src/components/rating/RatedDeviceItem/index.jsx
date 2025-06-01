@@ -11,10 +11,11 @@ import 'swiper/css/pagination';
 import styles from './RatedDeviceItem.module.scss';
 
 const RatedDeviceItem = ({ device, id, rate, createdAt, updatedAt, onDelete, isItemLoading }) => {
-  const [deviceRating, setDeviceRating] = useState(device.rating);
+  const [deviceRating, setDeviceRating] = useState(device?.rating ?? 0);
   const [localRate, setLocalRate] = useState(rate);
   const createDate = new Date(createdAt).toLocaleString();
   const updateDate = new Date(updatedAt).toLocaleString();
+  if (!device) return null;
 
   return (
     <article className={`${styles.card} ${isItemLoading ? styles.loading : ''}`}>
@@ -37,7 +38,7 @@ const RatedDeviceItem = ({ device, id, rate, createdAt, updatedAt, onDelete, isI
             <h2 className={styles.title}>{device.name}</h2>
             <p className={styles.price}>{device.price} ₽</p>
             <div className={styles.rating}>
-              <span>{deviceRating.toFixed(1)}</span>
+              <span>{deviceRating ? deviceRating.toFixed(1) : '0.0'}</span>
               <svg
                 width="15"
                 height="15"

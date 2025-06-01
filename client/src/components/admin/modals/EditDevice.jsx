@@ -42,8 +42,8 @@ const EditDevice = observer(({ show, onHide, device, onUpdate }) => {
       formData.append('description', description);
       formData.append('info', JSON.stringify(info));
 
-      const updatedDevice = await updateDevice(device.id, formData);
-      onUpdate(updatedDevice);
+      await updateDevice(device.id, formData);
+      onUpdate();
       onHide();
     } catch (e) {
       alert('Ошибка при обновлении устройства');
