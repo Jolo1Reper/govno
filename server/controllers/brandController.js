@@ -19,13 +19,13 @@ class BrandController {
         // Добавляем только новые связи
         const newTypeIds = typeIds.filter(typeId => !existingTypeIds.includes(typeId));
         if (newTypeIds.length) {
-          await TypeBrand.bulkCreate(
+        await TypeBrand.bulkCreate(
             newTypeIds.map(typeId => ({
-              brandId: brand.id,
-              typeId: typeId
-            }))
-          );
-        }
+            brandId: brand.id,
+            typeId: typeId
+          }))
+        );
+      }
       }
       return res.json(brand);
     } catch (e) {

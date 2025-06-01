@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.bottom}>
-                    <p className={styles.copyright}>© 2024 Online Store. Все права защищены.</p>
+                    <p className={styles.copyright}>© 2025 Online Store. Все права защищены.</p>
                 </div>
             </div>
         </footer>

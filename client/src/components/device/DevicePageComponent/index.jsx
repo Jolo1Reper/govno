@@ -82,11 +82,11 @@ const DevicePageComponent = observer(
       const initVariants = [];
 
       if (Array.isArray(info)) {
-        info.forEach((item) => {
+      info.forEach((item) => {
           if (item?.variants?.length) {
             initVariants.push({ id: item.variants[0].id, infoId: item.id });
-          }
-        });
+        }
+      });
       }
 
       setSelectedVariant(initVariants);

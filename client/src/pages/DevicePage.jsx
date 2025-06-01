@@ -81,13 +81,13 @@ const DevicePage = observer(() => {
         console.error('Ошибка при получении устройства:', e);
       } finally {
         setIsLoading(false);
-      }
+    }
 
-      if (user.isAuth) {
+    if (user.isAuth) {
         try {
           const [basketData, ratingData] = await Promise.all([
-            fetchBasketDevices(user.userId),
-            fetchOneRating({ userId: user.userId, deviceId: id }),
+        fetchBasketDevices(user.userId),
+        fetchOneRating({ userId: user.userId, deviceId: id }),
           ]);
 
           if (basketData) {
@@ -103,9 +103,9 @@ const DevicePage = observer(() => {
         } finally {
           setIsUserDataLoading(false);
         }
-      } else {
-        setIsUserDataLoading(false);
-      }
+    } else {
+      setIsUserDataLoading(false);
+    }
     };
 
     loadData();
